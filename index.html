@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <!-- =======================
-  KETERANGAN PENGGUNAAN
-  ==========================
-  - Ganti teks di tiap <section> sesuai kebutuhan sekolah.
-  - Warna utama: ubah variabel CSS di :root.
-  - Gambar: ubah URL Unsplash di elemen <img>.
-  - Endpoint form: ubah URL pada fetch() di bagian JS.
-  ======================= -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Unit Produksi Smart-Tech - Solusi Teknologi oleh siswa SMK. Servis komputer, perakitan, web design, dan jaringan IoT." />
   <title>Unit Produksi Smart-Tech</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    /* ========== VARIABEL WARNA DAN DASAR ========== */
+    /* ==========================
+       VARIABEL WARNA & DASAR
+    =========================== */
     :root {
       --primary: #0B63FF;
       --dark: #0F1724;
@@ -51,7 +46,9 @@
       background: #E0E6ED;
     }
 
-    /* ========== NAVBAR ========== */
+    /* ==========================
+       NAVBAR
+    =========================== */
     header {
       position: fixed;
       width: 100%;
@@ -118,7 +115,9 @@
       }
     }
 
-    /* ========== HERO SECTION ========== */
+    /* ==========================
+       HERO SECTION
+    =========================== */
     .hero {
       display: flex;
       align-items: center;
@@ -151,16 +150,20 @@
     .btn:hover {
       transform: translateY(-3px);
     }
+
     .hero img {
       flex: 1;
-      max-width: 500px;
       width: 100%;
+      max-width: 450px;
+      height: auto;
       border-radius: var(--radius);
       outline: var(--outline);
       box-shadow: 0 8px 20px rgba(0,0,0,0.05);
     }
 
-    /* ========== ABOUT ========== */
+    /* ==========================
+       ABOUT
+    =========================== */
     .about {
       text-align: center;
     }
@@ -170,7 +173,9 @@
       color: var(--muted);
     }
 
-    /* ========== SERVICES ========== */
+    /* ==========================
+       SERVICES
+    =========================== */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -193,7 +198,9 @@
       fill: var(--primary);
     }
 
-    /* ========== PORTOFOLIO SECTION ========== */
+    /* ==========================
+       PORTOFOLIO
+    =========================== */
     #portofolio img {
       width: 100%;
       margin-top: 30px;
@@ -202,7 +209,9 @@
       box-shadow: 0 8px 18px rgba(0,0,0,0.06);
     }
 
-    /* ========== MOTIVASI ========== */
+    /* ==========================
+       MOTIVASI
+    =========================== */
     .motivasi-list {
       display: flex;
       flex-direction: column;
@@ -218,7 +227,9 @@
       outline: var(--outline);
     }
 
-    /* ========== TEAM ========== */
+    /* ==========================
+       TEAM
+    =========================== */
     .team-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -237,7 +248,9 @@
       color: var(--primary);
     }
 
-    /* ========== CONTACT ========== */
+    /* ==========================
+       CONTACT
+    =========================== */
     form {
       max-width: 600px;
       margin: 40px auto;
@@ -264,7 +277,9 @@
       background: #004de0;
     }
 
-    /* ========== FOOTER ========== */
+    /* ==========================
+       FOOTER
+    =========================== */
     footer {
       text-align: center;
       background: var(--dark);
@@ -277,13 +292,19 @@
       margin: 0 10px;
     }
 
-    /* ========== RESPONSIVE TEXT ========== */
+    /* ==========================
+       RESPONSIVE TEXT
+    =========================== */
     @media(max-width:600px){
       .hero-text h1 {
         font-size: 2rem;
       }
       section {
         padding: 80px 7%;
+      }
+      .hero img {
+        max-width: 100%;
+        margin-top: 20px;
       }
     }
   </style>
@@ -315,8 +336,7 @@
       <p>Mengembangkan keterampilan teknologi siswa SMK menjadi solusi nyata bagi masyarakat. Kami melayani dengan profesionalisme dan semangat inovasi.</p>
       <a href="#kontak" class="btn">Hubungi Kami</a>
     </div>
-<img src="pict1.jpg" alt="Ilustrasi teknologi" width="300" height="700">
-    
+    <img src="pict1.jpg" alt="Ilustrasi teknologi">
   </section>
 
   <!-- ========== ABOUT SECTION ========== -->
@@ -431,346 +451,7 @@
     <a href="#">WhatsApp</a>
   </footer>
 
-  <div class="toast" id="toast">Pesan terkirim — terima kasih!</div>
-
-  <!-- ========== SVG ICON DEFINITIONS ========== -->
-  <svg style="display:none;">
-    <symbol id="computer" viewBox="0 0 24 24"><path d="M4 5h16v10H4z"/><path d="M2 17h20v2H2z"/></symbol>
-    <symbol id="pc" viewBox="0 0 24 24"><path d="M4 4h16v12H4z"/><path d="M2 18h20v2H2z"/></symbol>
-    <symbol id="web" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/></symbol>
-    <symbol id="iot" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></symbol>
-  </svg>
-
-  <noscript>
-    <p style="text-align:center;color:red;">⚠️ JavaScript dinonaktifkan — beberapa fitur (animasi, validasi form) tidak akan berfungsi.</p>
-  </noscript>
-</body>
-</html>
-i        padding: 20px;
-      }
-      .nav-links.open {
-        display: flex;
-      }
-      .hamburger {
-        display: flex;
-      }
-    }
-
-    /* ========== HERO SECTION ========== */
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 50px;
-      flex-wrap: wrap;
-    }
-    .hero-text {
-      flex: 1;
-      min-width: 300px;
-    }
-    .hero-text h1 {
-      font-size: 2.8rem;
-      color: var(--primary);
-    }
-    .hero-text p {
-      margin: 20px 0;
-      color: var(--muted);
-      font-size: 1.1rem;
-    }
-    .btn {
-      background: var(--primary);
-      color: white;
-      padding: 12px 25px;
-      border-radius: var(--radius);
-      text-decoration: none;
-      display: inline-block;
-      transition: transform var(--transition);
-    }
-    .btn:hover {
-      transform: translateY(-3px);
-    }
-    .hero img {
-      flex: 1;
-      max-width: 500px;
-      width: 100%;
-      border-radius: var(--radius);
-      outline: var(--outline);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-    }
-
-    /* ========== ABOUT ========== */
-    .about {
-      text-align: center;
-    }
-    .about p {
-      max-width: 700px;
-      margin: 20px auto;
-      color: var(--muted);
-    }
-
-    /* ========== SERVICES ========== */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
-    }
-    .service-card {
-      background: var(--light);
-      padding: 30px;
-      border-radius: var(--radius);
-      transition: transform var(--transition);
-      outline: var(--outline);
-    }
-    .service-card:hover {
-      transform: translateY(-5px);
-    }
-    .service-card svg {
-      width: 40px;
-      height: 40px;
-      fill: var(--primary);
-    }
-
-    /* ========== PORTOFOLIO SECTION ========== */
-    #portofolio img {
-      width: 100%;
-      margin-top: 30px;
-      border-radius: var(--radius);
-      outline: var(--outline);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.06);
-    }
-
-    /* ========== MOTIVASI ========== */
-    .motivasi-list {
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-      max-width: 800px;
-      margin: auto;
-    }
-    .motivasi-item {
-      background: var(--light);
-      border-left: 5px solid var(--primary);
-      padding: 20px;
-      border-radius: var(--radius);
-      outline: var(--outline);
-    }
-
-    /* ========== TEAM ========== */
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      text-align: center;
-      margin-top: 40px;
-    }
-    .team-member img {
-      width: 100%;
-      border-radius: var(--radius);
-      outline: var(--outline);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.05);
-    }
-    .team-member h4 {
-      margin-top: 10px;
-      color: var(--primary);
-    }
-
-    /* ========== CONTACT ========== */
-    form {
-      max-width: 600px;
-      margin: 40px auto;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-    input, select, textarea {
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: var(--radius);
-      font-family: inherit;
-    }
-    button {
-      background: var(--primary);
-      color: white;
-      padding: 12px;
-      border: none;
-      border-radius: var(--radius);
-      cursor: pointer;
-      transition: var(--transition);
-    }
-    button:hover {
-      background: #004de0;
-    }
-
-    /* ========== FOOTER ========== */
-    footer {
-      text-align: center;
-      background: var(--dark);
-      color: white;
-      padding: 30px 10%;
-    }
-    footer a {
-      color: var(--primary);
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
-    /* ========== RESPONSIVE TEXT ========== */
-    @media(max-width:600px){
-      .hero-text h1 {
-        font-size: 2rem;
-      }
-      section {
-        padding: 80px 7%;
-      }
-    }
-  </style>
-</head>
-<body>
-  <!-- ========== NAVBAR ========== -->
-  <header>
-    <nav>
-      <div class="logo">Smart-Tech</div>
-      <div class="nav-links">
-        <a href="#beranda" class="active">Beranda</a>
-        <a href="#tentang">Tentang Kami</a>
-        <a href="#layanan">Layanan</a>
-        <a href="#portofolio">Portofolio</a>
-        <a href="#motivasi">Motivasi</a>
-        <a href="#tim">Tim</a>
-        <a href="#kontak">Kontak</a>
-      </div>
-      <div class="hamburger" aria-label="Toggle Menu">
-        <span></span><span></span><span></span>
-      </div>
-    </nav>
-  </header>
-
-  <!-- ========== HERO SECTION ========== -->
-  <section id="beranda" class="hero fade-in">
-    <div class="hero-text">
-      <h1>Unit Produksi Smart-Tech</h1>
-      <p>Mengembangkan keterampilan teknologi siswa SMK menjadi solusi nyata bagi masyarakat. Kami melayani dengan profesionalisme dan semangat inovasi.</p>
-      <a href="#kontak" class="btn">Hubungi Kami</a>
-    </div>
-    <img src="pict1.img" alt="Ilustrasi teknologi">
-  </section>
-
-  <!-- ========== ABOUT SECTION ========== -->
-  <section id="tentang" class="about fade-in">
-    <h2>Tentang Kami</h2>
-    <p>Unit Produksi Smart-Tech merupakan wadah siswa jurusan Teknik Komputer dan Jaringan untuk mengaplikasikan ilmu dalam dunia kerja nyata. Kami berkomitmen memberikan layanan terbaik di bidang teknologi informasi.</p>
-  </section>
-
-  <!-- ========== SERVICES SECTION ========== -->
-  <section id="layanan" class="fade-in">
-    <h2>Layanan Kami</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <svg><use href="#computer"></use></svg>
-        <h3>Servis Komputer</h3>
-        <p>Perbaikan dan perawatan perangkat komputer, laptop, serta periferal dengan cepat dan profesional.</p>
-      </div>
-      <div class="service-card">
-        <svg><use href="#pc"></use></svg>
-        <h3>Perakitan PC</h3>
-        <p>Merakit komputer sesuai kebutuhan gaming, desain, maupun pekerjaan kantor dengan efisiensi tinggi.</p>
-      </div>
-      <div class="service-card">
-        <svg><use href="#web"></use></svg>
-        <h3>Desain Web</h3>
-        <p>Pembuatan website modern dan responsif untuk bisnis, sekolah, maupun portofolio pribadi.</p>
-      </div>
-      <div class="service-card">
-        <svg><use href="#iot"></use></svg>
-        <h3>Jaringan & IoT</h3>
-        <p>Instalasi jaringan, konfigurasi router, serta integrasi perangkat IoT berbasis teknologi terkini.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== PORTOFOLIO SECTION ========== -->
-  <section id="portofolio" class="fade-in">
-    <h2>Portofolio</h2>
-    <p>Kami telah mengerjakan berbagai proyek, mulai dari instalasi jaringan sekolah hingga pengembangan website instansi.</p>
-    <img src="https://source.unsplash.com/900x400/?network,office" alt="Proyek Smart-Tech">
-  </section>
-
-  <!-- ========== MOTIVASI SECTION ========== -->
-  <section id="motivasi" class="fade-in">
-    <h2>Motivasi Teknologi</h2>
-    <div class="motivasi-list">
-      <div class="motivasi-item">
-        <p>"Teknologi terbaik adalah yang memampukan manusia menjadi lebih baik, bukan menggantikannya."</p>
-        <span>— Satya Nadella</span>
-      </div>
-      <div class="motivasi-item">
-        <p>"Masa depan diciptakan oleh mereka yang tidak hanya menggunakan teknologi, tetapi juga memahaminya."</p>
-        <span>— Elon Musk</span>
-      </div>
-      <div class="motivasi-item">
-        <p>"Inovasi membedakan antara pemimpin dan pengikut."</p>
-        <span>— Steve Jobs</span>
-      </div>
-      <div class="motivasi-item">
-        <p>"Kita belajar teknologi bukan sekadar agar bisa bekerja, tapi agar bisa menciptakan dunia baru."</p>
-        <span>— Bill Gates</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== TEAM SECTION ========== -->
-  <section id="tim" class="fade-in">
-    <h2>Tim Kami</h2>
-    <div class="team-grid">
-      <div class="team-member">
-        <img src="https://source.unsplash.com/300x300/?man,developer" alt="Anggota Tim">
-        <h4>Eki Zulfar</h4>
-        <p>Ketua Tim & Web Developer</p>
-      </div>
-      <div class="team-member">
-        <img src="https://source.unsplash.com/300x300/?woman,tech" alt="Anggota Tim">
-        <h4>Rina Oktavia</h4>
-        <p>Network Engineer</p>
-      </div>
-      <div class="team-member">
-        <img src="https://source.unsplash.com/300x300/?man,designer" alt="Anggota Tim">
-        <h4>Farhan Putra</h4>
-        <p>UI/UX Designer</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== CONTACT SECTION ========== -->
-  <section id="kontak" class="fade-in">
-    <h2>Hubungi Kami</h2>
-    <form id="contactForm">
-      <input type="text" name="nama" placeholder="Nama Lengkap" required>
-      <input type="email" name="email" placeholder="Email" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
-      <input type="tel" name="nomor" placeholder="Nomor Telepon (opsional)">
-      <select name="layanan" required>
-        <option value="">Pilih Layanan</option>
-        <option>Servis Komputer</option>
-        <option>Perakitan PC</option>
-        <option>Desain Web</option>
-        <option>Jaringan & IoT</option>
-      </select>
-      <textarea name="pesan" rows="5" placeholder="Pesan Anda..." minlength="10" required></textarea>
-      <button type="submit">Kirim Pesan</button>
-    </form>
-  </section>
-
-  <!-- ========== FOOTER ========== -->
-  <footer>
-    <p>© 2025 Unit Produksi Smart-Tech — Semua Hak Dilindungi.</p>
-    <a href="#">Kebijakan Privasi</a> | 
-    <a href="#">Instagram</a> | 
-    <a href="#">WhatsApp</a>
-  </footer>
-
-  <div class="toast" id="toast">Pesan terkirim — terima kasih!</div>
-
-  <!-- ========== SVG ICON DEFINITIONS ========== -->
+  <!-- ========== SVG ICONS ========== -->
   <svg style="display:none;">
     <symbol id="computer" viewBox="0 0 24 24"><path d="M4 5h16v10H4z"/><path d="M2 17h20v2H2z"/></symbol>
     <symbol id="pc" viewBox="0 0 24 24"><path d="M4 4h16v12H4z"/><path d="M2 18h20v2H2z"/></symbol>
